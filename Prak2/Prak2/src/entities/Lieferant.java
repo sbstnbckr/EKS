@@ -6,22 +6,31 @@
 package entities;
 
 import java.util.ArrayList;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
  * @author Sebastian
  */
+@XmlRootElement
 public class Lieferant {
     
     private String name;
     private String Adresse;
     private ArrayList<Buch> liefert;
+
+    public Lieferant() {}
+    
+    public Lieferant(String name, String Adresse) {
+        this.name = name;
+        this.Adresse = Adresse;
+    }
     
 
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
@@ -29,7 +38,6 @@ public class Lieferant {
     public String getAdresse() {
         return Adresse;
     }
-
     public void setAdresse(String Adresse) {
         this.Adresse = Adresse;
     }

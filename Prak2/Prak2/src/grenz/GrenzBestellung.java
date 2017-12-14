@@ -5,11 +5,14 @@
  */
 package grenz;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
 
 /**
  *
  * @author Sebastian
  */
+@XmlRootElement
 public class GrenzBestellung {
     private  int bestellnr;
     private String nameBesteller;

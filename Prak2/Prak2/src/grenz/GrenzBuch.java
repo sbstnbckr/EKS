@@ -6,11 +6,13 @@
 package grenz;
 
 import java.util.ArrayList;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
  * @author Sebastian
  */
+@XmlRootElement
 public class GrenzBuch {
     private int preis;
     private int registrierungsnummer;
