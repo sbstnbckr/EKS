@@ -7,6 +7,7 @@ package entities;
 
 import java.util.ArrayList;
 import javax.xml.bind.annotation.XmlRootElement;
+import objektverwaltung.AlleBestellungen;
 
 /**
  *
@@ -18,6 +19,15 @@ public class Bestellung {
     private  int bestellnr;
     private String nameBesteller;
     private Buch buch;
+
+    public Bestellung() {
+    }
+
+    public Bestellung(int bestellnr, String nameBesteller, Buch buch) {
+        this.bestellnr = bestellnr;
+        this.nameBesteller = nameBesteller;
+        this.buch = buch;
+    }
     
 
     public int getBestellnr() {
@@ -43,6 +53,8 @@ public class Bestellung {
     public void setBuch(Buch buch) {
         this.buch = buch;
     }
+
+    
     
     
     

@@ -17,7 +17,11 @@ public class Buch {
     
     private int preis;
     private int registrierungsnummer;
-    private ArrayList<Bestellung> bestellung;
+    private ArrayList<Bestellung> bestellung = new ArrayList();
+
+    public ArrayList<Bestellung> getBestellung() {
+        return bestellung;
+    }
     
 
     public int getPreis() {

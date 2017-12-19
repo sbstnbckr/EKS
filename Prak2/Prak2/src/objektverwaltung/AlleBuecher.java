@@ -6,6 +6,7 @@
 package objektverwaltung;
 
 import entities.Buch;
+import entities.Lieferant;
 import java.util.ArrayList;
 
 /**
@@ -16,7 +17,8 @@ public class AlleBuecher {
     
     private static AlleBuecher alleBuecher;
     private AlleBuecher() {
-        buecher = new ArrayList();}
+        buecher = new ArrayList();
+    }
     private ArrayList<Buch> buecher;
  
     public static AlleBuecher getInstance(){
@@ -24,6 +26,10 @@ public class AlleBuecher {
             alleBuecher = new AlleBuecher();
         } 
         return alleBuecher;
+    }
+
+    public ArrayList<Buch> getBuecher() {
+        return buecher;
     }
     
     public void addBuch(Buch b) {
@@ -34,6 +40,33 @@ public class AlleBuecher {
         buecher.remove(b);
     }
     
+    public String neuesBuch(Lieferant l, int preis){
+        
+        int regnr=freieNummer();
+                System.out.println("buch erstellt1");
+
+        
+        Buch buch = new Buch();
+                System.out.println("buch erstellt2");
+
+        buch.setPreis(preis);
+                System.out.println("buch erstellt3");
+
+        buch.setRegistrierungsnummer(regnr);
+                System.out.println("buch erstellt4");
+
+        buecher.add(buch);
+
+        l.addLiefert(buch);
+                System.out.println("buch erstellt5");
+
+        System.out.println("buch erstellt");
+        return Integer.toString(regnr);
+        
+        
+        
+    }
+    
     public Buch getBuch(int regnr) {
         for(Buch b : buecher){
             if(b.getRegistrierungsnummer()==regnr){
@@ -41,6 +74,16 @@ public class AlleBuecher {
             }
         }
         return null;
+    }
+    
+    public int freieNummer() {
+        int n=0;
+        for (Buch b : buecher) {
+            if( n<b.getRegistrierungsnummer()){
+                n=b.getRegistrierungsnummer();
+            }
+        }
+        return n+1;
     }
     
 }

@@ -18,9 +18,10 @@ public class Lieferant {
     
     private String name;
     private String Adresse;
-    private ArrayList<Buch> liefert;
+    private ArrayList<Buch> liefert = new ArrayList<>();;
 
-    public Lieferant() {}
+    public Lieferant() {
+}
     
     public Lieferant(String name, String Adresse) {
         this.name = name;
@@ -43,7 +44,10 @@ public class Lieferant {
     }
     
     public void addLiefert(Buch b) {
+        System.out.println("addLiefert");
+
         liefert.add(b);
+        
     }
     
     public void removeLiefert(Buch b) {
